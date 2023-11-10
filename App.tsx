@@ -20,7 +20,9 @@ function App(): JSX.Element {
   const isRtl = I18nManager.isRTL;
 
   const onPress = () => {
-    I18nManager.forceRTL(!isRtl);
+    const nextRtl = !isRtl;
+    I18nManager.allowRTL(nextRtl);
+    I18nManager.forceRTL(nextRtl);
     RNRestart.restart();
   };
 
